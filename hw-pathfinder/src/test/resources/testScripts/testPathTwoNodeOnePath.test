@@ -1,0 +1,10 @@
+# Test path between two nodes
+
+CreateGraph Graph
+
+AddNode Graph A
+AddNode Graph B
+
+AddEdge Graph A B 10.0
+
+FindPath Graph A B

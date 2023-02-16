@@ -1,0 +1,9 @@
+# Test path to self
+
+CreateGraph Graph
+
+AddNode Graph A
+
+AddEdge Graph A A 10.0
+
+FindPath Graph A A

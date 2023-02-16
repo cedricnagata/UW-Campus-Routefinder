@@ -1,0 +1,14 @@
+# Test listing children of node
+
+created graph Graph
+
+added node A to Graph
+added node B to Graph
+added node C to Graph
+added node D to Graph
+
+added edge 1.000 from A to B in Graph
+added edge 1.000 from A to C in Graph
+added edge 1.000 from A to D in Graph
+
+the children of A in Graph are: B(1.0) C(1.0) D(1.0)

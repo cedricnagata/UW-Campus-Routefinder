@@ -1,0 +1,11 @@
+Briefly list any changes you made to your graph class during hw-pathfinder, and why you made those changes.
+
+The main changes I made to my graph class during hw-pathfinder involved changing it to be generic. This involved
+changing the original implementation which had Strings for Node and Edge data, and making the Nodes generic as
+well as the data for edges.
+
+I did this to be able to use different types of data with my graph class, which greatly helped while I was
+implementing Dijkstra's Algorithm and my Model View Controller because I needed to use a Graph that held Points
+as Nodes and Doubles for Edge data. With generics, I could do this as well as use Strings, so the tests for this
+homework passed, as well as the tests for the past homeworks.
+

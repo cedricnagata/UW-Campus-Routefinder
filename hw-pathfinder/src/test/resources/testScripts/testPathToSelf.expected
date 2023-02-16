@@ -1,0 +1,10 @@
+# Test path to self
+
+created graph Graph
+
+added node A to Graph
+
+added edge 10.000 from A to A in Graph
+
+path from A to A:
+total cost: 0.000

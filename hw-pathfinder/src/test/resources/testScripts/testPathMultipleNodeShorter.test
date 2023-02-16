@@ -1,0 +1,15 @@
+# Test shorter path between multiple nodes
+
+CreateGraph Graph
+
+AddNode Graph A
+AddNode Graph B
+AddNode Graph C
+AddNode Graph D
+
+AddEdge Graph A B 1.0
+AddEdge Graph B C 1.0
+AddEdge Graph C D 1.0
+AddEdge Graph A D 5.0
+
+FindPath Graph A D

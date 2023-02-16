@@ -1,0 +1,14 @@
+# Test listing children of node
+
+CreateGraph Graph
+
+AddNode Graph A
+AddNode Graph B
+AddNode Graph C
+AddNode Graph D
+
+AddEdge Graph A B 1.0
+AddEdge Graph A C 1.0
+AddEdge Graph A D 1.0
+
+ListChildren Graph A

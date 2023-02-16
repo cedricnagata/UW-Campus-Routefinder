@@ -1,0 +1,17 @@
+# Test shorter path between multiple nodes
+
+created graph Graph
+
+added node A to Graph
+added node B to Graph
+added node C to Graph
+added node D to Graph
+
+added edge 1.000 from A to B in Graph
+added edge 1.000 from B to C in Graph
+added edge 1.000 from C to D in Graph
+added edge 2.000 from A to D in Graph
+
+path from A to D:
+A to D with weight 2.000
+total cost: 2.000
