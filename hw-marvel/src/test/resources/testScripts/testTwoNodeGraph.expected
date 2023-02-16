@@ -1,0 +1,13 @@
+# test parseData and findPath on two nodes graph
+
+# build graph
+loaded graph twoNodeGraph
+
+# check graph is built
+twoNodeGraph contains: node1 node2
+the children of node1 in twoNodeGraph are:
+the children of node2 in twoNodeGraph are:
+
+# check findPath
+path from node1 to node2:
+no path found

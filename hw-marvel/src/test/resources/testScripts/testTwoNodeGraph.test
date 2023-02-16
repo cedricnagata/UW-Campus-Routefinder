@@ -1,0 +1,12 @@
+# test parseData and findPath on two nodes graph
+
+# build graph
+LoadGraph twoNodeGraph twoNodeGraph.csv
+
+# check graph is built
+ListNodes twoNodeGraph
+ListChildren twoNodeGraph node1
+ListChildren twoNodeGraph node2
+
+# check findPath
+FindPath twoNodeGraph node1 node2

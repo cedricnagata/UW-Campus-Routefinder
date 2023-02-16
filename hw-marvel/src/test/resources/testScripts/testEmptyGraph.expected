@@ -1,0 +1,8 @@
+# Test ParseData and findPath on empty file
+
+loaded graph emptyGraph
+
+emptyGraph contains:
+
+unknown: node a
+unknown: node b

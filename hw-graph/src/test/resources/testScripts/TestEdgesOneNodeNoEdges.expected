@@ -1,0 +1,8 @@
+# Create a graph
+created graph Graph
+
+# Add a node
+added node n1 to Graph
+
+# List the children of n1 in the graph
+the children of n1 in Graph are:

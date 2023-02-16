@@ -1,0 +1,15 @@
+# Create a Graph
+CreateGraph Graph
+
+# Add two nodes
+AddNode Graph n1
+AddNode Graph n2
+
+# Add multiple edges to and from each node with different labels
+AddEdge Graph n1 n2 e1_n1n2
+AddEdge Graph n1 n2 e2_n1n2
+AddEdge Graph n2 n1 e1_n2n1
+AddEdge Graph n2 n1 e2_n2n1
+
+# List the children of n2 in the Graph
+ListChildren Graph n2

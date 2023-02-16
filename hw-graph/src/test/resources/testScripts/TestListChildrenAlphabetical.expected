@@ -1,0 +1,17 @@
+# Create a graph
+created graph Graph
+
+# Adds three nodes with ascending alphabetical names
+added node nodeA to Graph
+added node nodeB to Graph
+added node nodeC to Graph
+
+# Adds four edges two from A to B and C and two from B to A with different edges
+added edge edgeA from nodeA to nodeC in Graph
+added edge edgeB from nodeA to nodeB in Graph
+added edge edgeC from nodeB to nodeC in Graph
+added edge edgeD from nodeB to nodeC in Graph
+
+# List the children of the nodes A and B in the graph
+the children of nodeA in Graph are: nodeB(edgeB) nodeC(edgeA)
+the children of nodeB in Graph are: nodeC(edgeC) nodeC(edgeD)

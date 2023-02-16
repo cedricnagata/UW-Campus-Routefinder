@@ -1,0 +1,8 @@
+# Create a graph
+created graph Graph
+
+# Add a node
+added node n1 to Graph
+
+# List the Nodes in the graph
+Graph contains: n1

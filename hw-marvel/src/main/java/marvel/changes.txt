@@ -1,0 +1,10 @@
+Briefly list any changes you made to your graph class during hw-marvel, and why you made those changes.
+
+I added a method to my graph class called getEdgesLabel tht returns a List of String[], that has both
+the label of the edge and data of the child Node of the edge stored in it.
+I made this change to be able to return a list of edges that only stores Strings to make implementing my
+findPath method easier.
+I also added two more methods to my graph class called addEdgeLabels and addNodeLabel that each perform the same
+action as addEdge and addNode respectively but they both take Strings for arguments instead of Nodes.
+I made this change to be able to add Nodes and Edges with only Strings, instead of having to create a Node or edge
+first then add it to the graph.

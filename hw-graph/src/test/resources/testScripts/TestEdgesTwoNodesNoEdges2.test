@@ -1,0 +1,9 @@
+# Create a graph
+CreateGraph Graph
+
+# Adds two nodes to the graph
+AddNode Graph n1
+AddNode Graph n2
+
+# List the children of n2 in the graph
+ListChildren Graph n2

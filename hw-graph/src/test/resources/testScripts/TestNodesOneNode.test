@@ -1,0 +1,8 @@
+# Create a graph
+CreateGraph Graph
+
+# Add a node
+AddNode Graph n1
+
+# List the Nodes in the graph
+ListNodes Graph

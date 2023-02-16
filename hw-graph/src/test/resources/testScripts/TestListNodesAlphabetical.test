@@ -1,0 +1,9 @@
+# Create a graph
+CreateGraph Graph
+
+# Adds two nodes to the graph
+AddNode Graph nodeB
+AddNode Graph nodeA
+
+# List the Nodes in the graph
+ListNodes Graph

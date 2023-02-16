@@ -1,0 +1,165 @@
+## CSE 331 hw-graph Part 1 Questions
+
+## Part 1
+###########################################################################
+
+a. Write an AF and RI for IntQueue1 and IntQueue2.
+
+    ### IntQueue1
+
+    Abstraction Function:
+
+    AF(this) = Queue<Integer> where
+               // queue = entries
+               // entries = [] if there are no elements stored
+               // entries = [e1, e2, e3, ..., e_(n-1)] with n being number of elements stored
+
+    Representation Invariant:
+
+    entries has no null elements
+    entries as a whole is not equal to null
+
+
+    ### IntQueue2
+
+    Abstraction Function:
+
+    AF(this) = Queue<Integer> where
+               // queue = entries
+               // queue = [] if size == 0
+               // if front + size < entries.length, then queue = [e1, e2, e3, ..., e_(n-1)] with n being number
+               // of elements stored
+               // if front + size >= entries.length, then elements in the queue wrap around to the beginning,
+               // replacing original elements
+
+    Representation Invariant:
+
+    size >= 0
+    entries as a whole is not equal to null
+    front >= 0
+    front < entries.length
+
+
+b. Group the snapshots of IntQueue2's internal state into groups that have the same abstract state.
+
+    a. [1, 2]
+    b. [2, 3, 4]
+    c. [1, 2, 3]
+    d. [1, 2]
+    e. [1, 2, 3, 4]
+    f. [1, 2, 3]
+    g. [1, 2]
+    h. [2, 3, 4]
+    group 1 ([1, 2]): a, d, g
+    group 2 ([2, 3, 4]): b, h
+    group 3 ([1, 2, 3]): c, f
+    group 4 ([1, 2, 3, 4]): e
+
+c. For each signature below, state and justify in 1-2 sentences (per part) whether the method or constructor
+could possibly expose the representation, given the information available. Explain any assumptions you made.
+
+    1. `public int solveEquations(int x, int y, int z)`
+
+    The representation cannot be exposed because the method just returns an int, with is immutable, so the client
+    cannot
+    tamper with x, y, and z, so there is no chance of representation exposure.
+
+    2. `public String[] decode(boolean slowly)`
+
+    Unless the String[] array being returned is created inside the method, there is a chance of representation exposure
+    because if the array was created as a field outside the method it could be tampered with.
+
+    3. `private Date myBirthday()`
+
+    Unless Date is immutable or the Date object being returned is a copy of the original and not the original itself,
+    there is representation exposure because without these protections the Date can be modified.
+
+    4. `public String toString()`
+
+    The representation cannot be exposed because a String is being returned and Strings are immutable.
+
+    5. `public Iterator<Integer> elements()`
+
+    Unless the collection that the Iterator is referencing is immutable, there is representation exposure because
+    mutable collections can be modified.
+
+    6. `public Deck(List<Card> cards)`
+
+    Unless a copy of the "cards" List is made to construct the Deck object, instead of using the original,
+    there will be representation exposure, because using the original list entries allows them to be modified since
+    List is a mutable collection.
+
+
+## Part 2
+###########################################################################
+
+Briefly explain why you included the operations you did and why you feel they are a sufficient
+interface to a graph. If your design includes multiple classes or interfaces, explain why you
+included each one; if not, explain whether you considered additional classes and why you decided
+not to include them.
+
+My design includes three classes, one for a Node, one for an Edge, and one for a Graph. I used three classes
+because I saw it as the most intuitive way to represent the three main parts of the graph which are the Nodes,
+Edges, and the Graph itself. I included a checkRep method for all classes to ensure the representation
+invariant is not violated.
+
+For the Node class, I included methods for
+    - checkRep
+    - constructor: public Node(String data)
+    - getData
+    - toString
+    - hashCode
+    - equals
+I included these methods because these are the basic methods required for creating a Node that contains data and
+can be displayed and compared with other Nodes.
+
+For the Edge class, I included methods for
+    - checkRep
+    - constructor: public Edge(String label, Node childNode)
+    - getLabel
+    - getChild
+    - toString
+    - hashCode
+    - equals
+I included these methods because, similarly to the Node class, these methods allowed me to create an Edge with
+a label and a childNode that can have the label and childNode data returned as well as have the Edge be compared
+with other Edges.
+
+For the Graph class, I included methods for
+    - checkRep
+    - constructor: public Graph()
+    - addNode
+    - addEdge
+    - getNodes
+    - getChildren
+    - getEdges
+    - numberOfNodes
+    - numberOfEdges
+    - isEmpty
+    - containsNode
+    - containsEdgeLabel
+    - containsEdgeNodes
+I included these methods for the Graph because I needed addNode and addEdge to give client the ability
+to add Nodes and Edges to the Graph. getNodes is logical to give the client the ability to see all the
+Nodes present in the Graph, and based off this, getChildren is helpful to see all the Nodes connected
+to each Node. getEdges and numberOfEdges would be helpful to allow the client to see all the Edges and
+count them up as well. size and isEmpty would be necessary to simply check how many Nodes are in the graph
+and whether the graph is empty. Then finally, containsNode, containsEdgeLabel, and containsEdgeNodes would
+be useful for finding specific Nodes and Edges based on their Nodes or label.
+
+
+## Part 3
+###########################################################################
+
+What was your testing strategy for this assignment? How do your script tests and JUnit tests
+differ from each other (if they do), and why?
+
+I used the 0, 1, 2 strategy for my tests, mainly because this allowed me to cover a large spread of possible
+cases by following a simple formula, which made finding exceptions and edge cases much easier. I started by
+making tests for cases with an empty graph, like isEmpty, listNodes, listChildren, etc. Then I moved on to one Node
+and no edges, then two Nodes and no edges to cover the 0, 1, 2 of nodes. Following this, I repeated the process but
+added cases with 1 and 2 edges. For the exceptions and all the non-graph class related tests, I used Junit tests.
+These exceptions included numberOfNodes and numberOfEdges printing the number of Nodes and Edges in a Graph, since
+there is not a great way to test these cases using script tests. I also used Junit to test cases that were either
+false or should throw exceptions, like adding an edge with a null label or Nodes for example. Also, for testing cases
+that are not defined by script tests, like adding the same Node or edge twice for example.

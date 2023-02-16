@@ -1,0 +1,11 @@
+# Create a graph
+created graph Graph
+
+# Adds two nodes and two opposite edges connecting them
+added node n1 to Graph
+added node n2 to Graph
+added edge e1_n1n2 from n1 to n2 in Graph
+added edge e2_n2n1 from n2 to n1 in Graph
+
+# List the children of n2 in the graph
+the children of n2 in Graph are: n1(e2_n2n1)

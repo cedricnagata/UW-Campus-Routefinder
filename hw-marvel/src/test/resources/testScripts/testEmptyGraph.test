@@ -1,0 +1,7 @@
+# Test ParseData and findPath on empty file
+
+LoadGraph emptyGraph empty.csv
+
+ListNodes emptyGraph
+
+FindPath emptyGraph node_a node_b

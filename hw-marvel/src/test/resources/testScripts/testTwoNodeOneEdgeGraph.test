@@ -1,0 +1,12 @@
+# Test MarvelPaths doesn't allow adding reflexive edge
+
+# Parse through the data and build the graph
+LoadGraph reflexiveGraph reflexiveEdge.csv
+
+# List nodes and edges to see if the graph is built correctly
+ListNodes reflexiveGraph
+ListChildren reflexiveGraph node1
+ListChildren reflexiveGraph node2
+
+# Find the shortest path node1 to node2
+FindPath reflexiveGraph node1 node2

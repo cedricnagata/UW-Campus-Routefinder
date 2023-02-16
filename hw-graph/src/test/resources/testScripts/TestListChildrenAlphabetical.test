@@ -1,0 +1,17 @@
+# Create a graph
+CreateGraph Graph
+
+# Adds three nodes with ascending alphabetical names
+AddNode Graph nodeA
+AddNode Graph nodeB
+AddNode Graph nodeC
+
+# Adds four edges two from A to B and C and two from B to A with different edges
+AddEdge Graph nodeA nodeC edgeA
+AddEdge Graph nodeA nodeB edgeB
+AddEdge Graph nodeB nodeC edgeC
+AddEdge Graph nodeB nodeC edgeD
+
+# List the children of the nodes A and B in the graph
+ListChildren Graph nodeA
+ListChildren Graph nodeB

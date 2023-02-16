@@ -1,0 +1,12 @@
+# test parseData and findPath on one node graph
+
+# build graph
+loaded graph oneNodeGraph
+
+# check graph is built
+oneNodeGraph contains: oneNode
+the children of oneNode in oneNodeGraph are:
+
+# check findPath
+path from oneNode to oneNode:
+unknown: twoNode
